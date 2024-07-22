@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Intent</title>
+  </head>
+  <body>
+    <h1>Add Intent</h1>
+    <form action="/add_intent" method="post">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="description">Description:</label><br>
+      <input type="text" id="description" name="description"><br>
+      <input type="submit" value="Add Intent">
+    </form>
+    
+
+    <script>
+      const form = document.getElementById('add-intent-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const intent = document.getElementById('intent').value;
+        const pattern = document.getElementById('pattern').value;
+        const response = document.getElementById('response').value;
+        fetch('/add_intent', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ intent, pattern, response }),
+        })
+       .then((response) => response.json())
+       .then((data) => console.log(data))
+       .catch((error) => console.error(error));
+      });
+    </script>
+  </body>
+</html>

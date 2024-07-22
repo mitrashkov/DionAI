@@ -1,0 +1,20 @@
+{
+    "intents": [
+        {"tag": "greetings",
+         "patterns": ["hello", "hi", "what's up?", "whats up", "good morning", "good afternoon", "good evening", "morning", "afternoon", "evening", "how's it going?", "how is it going?"],
+         "responses": ["Hello!", "Hey!", "What can I do for you?", "Greeting, Human!"]
+        },
+
+
+        {"tag": "name",
+         "patterns": ["What's your name?", "can you tell me your name?", "What do i call you?"],
+         "responses": ["i'm a Chatbot. My name is Chatbot", "Call me Chatbot since I'm a Chatbot."]
+        },
+
+
+        {"tag": "age",
+         "patterns": ["How old are you?", "What's your age?", "Age?", "How old is your owner?", "What's your owner's age?"],
+         "responses": ["My own is 25!", "My owner is 25 years old!"]
+        }
+    ]
+}
